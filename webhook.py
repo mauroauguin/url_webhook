@@ -94,11 +94,14 @@ def webhook():
                 print("Respuesta de GPT:", gpt_response)
 
                 # Enviar gpt_response al script y obtener la respuesta
-                script_response = send_to_script(gpt_response, phone_number)
-                print("Respuesta del script:", script_response)
+                #script_response = send_to_script(gpt_response, phone_number)
+                #print("Respuesta del script:", script_response)
 
                 # Usar la respuesta del script si está disponible
-                response_to_user = script_response["result"]
+                #response_to_user = script_response["result"]
+                
+                response_to_user = gpt_response
+                
 
                 # Guardar la conversación completa en la base de datos
                 save_conversation(phone_number, message, response_to_user)
