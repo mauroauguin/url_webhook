@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Conversaciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="conversations-list">
+            <h2>Conversaciones</h2>
+            <div id="phone-numbers"></div>
+        </div>
+        <div class="chat-container">
+            <div id="chat-messages"></div>
+            <div class="message-input-container">
+                <button id="bot-toggle" class="bot-toggle" disabled>
+                    <span class="bot-status">🤖</span>
+                </button>
+                <textarea id="message-input" placeholder="Escribe un mensaje..." rows="2"></textarea>
+                <button id="send-button" disabled>Enviar</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
